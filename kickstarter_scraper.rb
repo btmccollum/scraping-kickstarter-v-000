@@ -7,6 +7,8 @@ def create_project_hash
 
   projects = {}
 
+  #will need to iterate through the page we are parsing to create a hash with several keys such as imagelink,
+  #description, location, % funded, and amount funded
   kickstarter.css("li.project.grid_4").each do |project|
     title = project.css("h2.bbcard_name strong a").text
     projects[title.to_sym] = {
