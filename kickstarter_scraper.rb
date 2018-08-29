@@ -10,7 +10,8 @@ def create_project_hash
   projects = {}
 
   kickstarter.css("li.project.grid_4").each do |project|
-    project[project] = {}
+    title = project.css("h2.bbcard_name strong a").text
+    projects[title.to_sym] = {}
   end
 
   projects
@@ -26,5 +27,5 @@ def create_project_hash
   # empty_bullet: project.css("li.last.ksr_page_timer strong div.num").text
 end
 
-create_project_hash
-binding.pry
+# create_project_hash
+# binding.pry
